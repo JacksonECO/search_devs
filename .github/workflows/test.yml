@@ -1,4 +1,4 @@
-name: Ci/Cd Teste
+name: CI/CD Teste
 
 on: [push]
 
