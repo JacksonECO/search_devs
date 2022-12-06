@@ -37,7 +37,7 @@ class StylesApp {
 }
 
 extension StylesAppExtension on BuildContext {
-  StylesApp get textStyles => StylesApp.i;
+  StylesApp get styles => StylesApp.i;
 }
 
 /*

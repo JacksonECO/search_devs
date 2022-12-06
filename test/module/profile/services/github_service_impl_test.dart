@@ -26,6 +26,7 @@ void main() {
     description: 'description',
     language: 'Dart',
     stargazersCount: 1,
+    updatedAt: DateTime.now().subtract(const Duration(days: 1, hours: 5)),
   );
 
   fn(Request request) async {

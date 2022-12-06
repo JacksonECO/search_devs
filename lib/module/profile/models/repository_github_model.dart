@@ -5,12 +5,14 @@ class RepositoryGitHubModel {
   final String? description;
   final String? language;
   final int stargazersCount;
+  final DateTime updatedAt;
 
   RepositoryGitHubModel({
     required this.name,
     this.description,
     this.language,
     required this.stargazersCount,
+    required this.updatedAt,
   });
 
   static List<RepositoryGitHubModel> fromJsonList(String json) {
@@ -24,6 +26,7 @@ class RepositoryGitHubModel {
       'description': description,
       'language': language,
       'stargazers_count': stargazersCount,
+      'updated_at': updatedAt.toIso8601String(),
     };
   }
 
@@ -33,6 +36,7 @@ class RepositoryGitHubModel {
       description: map['description'] as String?,
       language: map['language'] as String?,
       stargazersCount: map['stargazers_count'] as int,
+      updatedAt: DateTime.parse(map['updated_at'] as String),
     );
   }
 
@@ -43,6 +47,6 @@ class RepositoryGitHubModel {
 
   @override
   String toString() {
-    return 'RepositoryGitHubModel(name: $name, description: $description, language: $language, stargazersCount: $stargazersCount)';
+    return 'RepositoryGitHubModel(name: $name, description: $description, language: $language, stargazersCount: $stargazersCount, updatedAt: $updatedAt)';
   }
 }
