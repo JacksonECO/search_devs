@@ -28,7 +28,7 @@ flutter build apk
 
 * Para instalar o aplicativo de release em seu smartphone:
 
-  * Tenha o aplicativo (arquivo .apk) em seu dispositivo, pode ser enviado por exemplo via whatsapp
+  * Tenha o aplicativo (arquivo .apk) em seu dispositivo, pode ser enviado por exemplo via whatsapp ou explorador de arquivos. Para baixar este aplicativo click [aqui](https://github.com/JacksonECO/search_devs/releases/download/v1.0.0/search_devs_v1.0.0+1.apk)
 
   * Em seguida tente click em cima abrir
 
