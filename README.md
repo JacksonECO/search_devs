@@ -87,3 +87,8 @@ Por todas as vantagens deste padrão, o seu antecessor monólito vem perdendo es
 ![Padrão Modular](https://miro.medium.com/max/1400/1*saKX3Dssawi-Z4zT0mNRmQ.png)
 
 ## Design final
+
+
+| | |
+|:-------------------------:|:-------------------------:|
+<img width="1604" alt="Page Home" src="./docs/home.png">|<img width="1604" alt="Page Profile" src="./docs/profile.png">|
