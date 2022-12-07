@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:search_devs/core/custom/style_app.dart';
 import 'package:search_devs/core/helps/my_icons.dart';
 import 'package:search_devs/core/helps/string_formatter.dart';
+import 'package:search_devs/core/widgets/link.dart';
 import 'package:search_devs/module/profile/models/repository_github_model.dart';
 import 'package:search_devs/module/profile/widgets/icon_name_tile.dart';
 
@@ -16,7 +17,10 @@ class RepositoryWidget extends StatelessWidget with StringFormatter {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(repository.name, style: context.styles.title),
+          Link(
+            url: 'https://github.com/${repository.owner}/${repository.name}',
+            child: Text(repository.name, style: context.styles.title),
+          ),
           const SizedBox(height: 16),
           Text(repository.description ?? 'Sem descrição', style: context.styles.body),
           const SizedBox(height: 16),

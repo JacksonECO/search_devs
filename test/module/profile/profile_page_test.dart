@@ -30,6 +30,7 @@ void main() {
 
   var repository = RepositoryGitHubModel(
     name: 'name',
+    owner: 'owner',
     description: 'description',
     language: 'language',
     stargazersCount: 2,

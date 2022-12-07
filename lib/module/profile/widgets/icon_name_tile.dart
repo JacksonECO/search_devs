@@ -25,6 +25,7 @@ class IconNameTile extends StatelessWidget {
         Text(
           name,
           style: context.styles.body,
+          overflow: TextOverflow.ellipsis,
         ),
       ],
     );

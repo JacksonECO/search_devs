@@ -21,6 +21,7 @@ void main() {
 
   var repositoryGitHubModel = RepositoryGitHubModel(
     name: 'name',
+    owner: 'owner',
     description: 'description',
     language: 'Dart',
     stargazersCount: 1,

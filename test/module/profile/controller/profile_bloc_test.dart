@@ -23,6 +23,7 @@ void main() {
 
   final repository = RepositoryGitHubModel(
     name: 'name',
+    owner: 'owner',
     description: 'description',
     language: 'language',
     stargazersCount: 2,
@@ -30,6 +31,7 @@ void main() {
   );
   final repository2 = RepositoryGitHubModel(
     name: 'name',
+    owner: 'owner',
     description: 'description',
     language: 'language',
     stargazersCount: 2,

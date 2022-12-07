@@ -2,6 +2,7 @@ import 'dart:convert';
 
 class RepositoryGitHubModel {
   final String name;
+  final String owner;
   final String? description;
   final String? language;
   final int stargazersCount;
@@ -9,6 +10,7 @@ class RepositoryGitHubModel {
 
   RepositoryGitHubModel({
     required this.name,
+    required this.owner,
     this.description,
     this.language,
     required this.stargazersCount,
@@ -23,6 +25,7 @@ class RepositoryGitHubModel {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'name': name,
+      'owner': {'login': owner},
       'description': description,
       'language': language,
       'stargazers_count': stargazersCount,
@@ -33,6 +36,7 @@ class RepositoryGitHubModel {
   factory RepositoryGitHubModel.fromMap(Map<String, dynamic> map) {
     return RepositoryGitHubModel(
       name: map['name'] as String,
+      owner: map['owner']['login'] as String,
       description: map['description'] as String?,
       language: map['language'] as String?,
       stargazersCount: map['stargazers_count'] as int,
@@ -47,6 +51,6 @@ class RepositoryGitHubModel {
 
   @override
   String toString() {
-    return 'RepositoryGitHubModel(name: $name, description: $description, language: $language, stargazersCount: $stargazersCount, updatedAt: $updatedAt)';
+    return 'RepositoryGitHubModel(name: $name, owner: $owner, description: $description, language: $language, stargazersCount: $stargazersCount, updatedAt: $updatedAt)';
   }
 }

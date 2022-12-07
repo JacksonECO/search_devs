@@ -4,6 +4,7 @@ import 'package:search_devs/core/custom/color_app.dart';
 import 'package:search_devs/core/custom/style_app.dart';
 import 'package:search_devs/core/helps/my_icons.dart';
 import 'package:search_devs/core/helps/string_formatter.dart';
+import 'package:search_devs/core/widgets/link.dart';
 import 'package:search_devs/module/profile/models/user_github_model.dart';
 import 'package:search_devs/module/profile/widgets/icon_name_tile.dart';
 
@@ -83,23 +84,32 @@ class UserWidget extends StatelessWidget with StringFormatter {
     }
 
     if (user.email != null && user.email!.isNotEmpty) {
-      list.add(IconNameTile(
-        icon: MyIcons.email,
-        name: user.email!,
+      list.add(Link(
+        url: 'mailto:${user.email!}',
+        child: IconNameTile(
+          icon: MyIcons.email,
+          name: user.email!,
+        ),
       ));
     }
 
     if (user.blog != null && user.blog!.isNotEmpty) {
-      list.add(IconNameTile(
-        icon: MyIcons.link,
-        name: user.blog!,
+      list.add(Link(
+        url: user.blog!,
+        child: IconNameTile(
+          icon: MyIcons.link,
+          name: user.blog!,
+        ),
       ));
     }
 
     if (user.twitterUsername != null && user.twitterUsername!.isNotEmpty) {
-      list.add(IconNameTile(
-        icon: MyIcons.twitter,
-        name: user.twitterUsername!,
+      list.add(Link(
+        url: 'https://twitter.com/${user.twitterUsername!.replaceAll('@', '')}',
+        child: IconNameTile(
+          icon: MyIcons.twitter,
+          name: user.twitterUsername!,
+        ),
       ));
     }
     switch (list.length) {
@@ -108,7 +118,10 @@ class UserWidget extends StatelessWidget with StringFormatter {
       case 1:
       case 2:
       case 3:
-        return Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: list);
+        return SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: list),
+        );
       case 4:
         return Column(
           children: [
