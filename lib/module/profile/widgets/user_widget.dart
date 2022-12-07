@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:search_devs/core/custom/color_app.dart';
 import 'package:search_devs/core/custom/style_app.dart';
@@ -94,12 +95,9 @@ class UserWidget extends StatelessWidget with StringFormatter {
     }
 
     if (user.blog != null && user.blog!.isNotEmpty) {
-      list.add(Link(
-        url: user.blog!,
-        child: IconNameTile(
-          icon: MyIcons.link,
-          name: user.blog!,
-        ),
+      list.add(IconNameTile(
+        icon: MyIcons.link,
+        name: user.blog!,
       ));
     }
 
@@ -118,24 +116,80 @@ class UserWidget extends StatelessWidget with StringFormatter {
       case 1:
       case 2:
       case 3:
-        return SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: list),
-        );
+        return LayoutBuilder(builder: (context, constraints) {
+          return Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: list
+                .map((e) => Container(
+                      constraints: BoxConstraints(maxWidth: constraints.maxWidth / list.length),
+                      // width: constraints.maxWidth / list.length,
+                      child: e,
+                    ))
+                .toList(),
+          );
+        });
       case 4:
         return Column(
           children: [
-            Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: list.sublist(0, 2)),
+            LayoutBuilder(builder: (context, constraints) {
+              return Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: list
+                    .sublist(0, 2)
+                    .map((e) => Container(
+                          constraints: BoxConstraints(
+                              maxWidth: constraints.maxWidth / list.sublist(0, 2).length),
+                          child: e,
+                        ))
+                    .toList(),
+              );
+            }),
             const SizedBox(height: 8),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: list.sublist(2)),
+            LayoutBuilder(builder: (context, constraints) {
+              return Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: list
+                    .sublist(2)
+                    .map((e) => Container(
+                          constraints: BoxConstraints(
+                              maxWidth: constraints.maxWidth / list.sublist(2).length),
+                          child: e,
+                        ))
+                    .toList(),
+              );
+            }),
           ],
         );
       default:
         return Column(
           children: [
-            Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: list.sublist(0, 3)),
+            LayoutBuilder(builder: (context, constraints) {
+              return Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: list
+                    .sublist(0, 3)
+                    .map((e) => Container(
+                          constraints: BoxConstraints(
+                              maxWidth: constraints.maxWidth / list.sublist(0, 3).length),
+                          child: e,
+                        ))
+                    .toList(),
+              );
+            }),
             const SizedBox(height: 8),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: list.sublist(3)),
+            LayoutBuilder(builder: (context, constraints) {
+              return Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: list
+                    .sublist(3)
+                    .map((e) => Container(
+                          constraints: BoxConstraints(
+                              maxWidth: constraints.maxWidth / list.sublist(3).length),
+                          child: e,
+                        ))
+                    .toList(),
+              );
+            }),
           ],
         );
     }

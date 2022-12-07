@@ -16,16 +16,19 @@ class IconNameTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisSize: MainAxisSize.min,
       children: [
         SvgPicture.asset(
           icon.path,
           color: context.colors.independence,
         ),
         const SizedBox(width: 10),
-        Text(
-          name,
-          style: context.styles.body,
-          overflow: TextOverflow.ellipsis,
+        Flexible(
+          child: Text(
+            name,
+            style: context.styles.body,
+            overflow: TextOverflow.ellipsis,
+          ),
         ),
       ],
     );
