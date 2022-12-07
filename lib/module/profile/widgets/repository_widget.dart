@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:search_devs/core/custom/style_app.dart';
+import 'package:search_devs/core/helps/my_icons.dart';
 import 'package:search_devs/core/helps/string_formatter.dart';
 import 'package:search_devs/module/profile/models/repository_github_model.dart';
 import 'package:search_devs/module/profile/widgets/icon_name_tile.dart';
@@ -22,7 +23,7 @@ class RepositoryWidget extends StatelessWidget with StringFormatter {
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              IconNameTile(icon: Icons.abc, name: numSuffix(repository.stargazersCount)),
+              IconNameTile(icon: MyIcons.star, name: numSuffix(repository.stargazersCount)),
               const SizedBox(width: 8),
               Text('.', style: context.styles.body.copyWith(height: 0.35, fontSize: 25)),
               const SizedBox(width: 8),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:search_devs/core/custom/color_app.dart';
 import 'package:search_devs/core/custom/style_app.dart';
+import 'package:search_devs/core/helps/my_icons.dart';
 import 'package:search_devs/core/helps/string_formatter.dart';
 import 'package:search_devs/module/profile/models/user_github_model.dart';
 import 'package:search_devs/module/profile/widgets/icon_name_tile.dart';
@@ -43,9 +45,10 @@ class UserWidget extends StatelessWidget with StringFormatter {
             const SizedBox(height: 16),
             Row(
               children: [
-                IconNameTile(icon: Icons.abc, name: '${numSuffix(user.followers)} seguidores'),
+                IconNameTile(
+                    icon: MyIcons.personGroup, name: '${numSuffix(user.followers)} seguidores'),
                 const SizedBox(width: 15),
-                IconNameTile(icon: Icons.abc, name: '${numSuffix(user.following)} seguindo'),
+                IconNameTile(icon: MyIcons.heart, name: '${numSuffix(user.following)} seguindo'),
               ],
             ),
             const SizedBox(height: 16),
@@ -67,35 +70,35 @@ class UserWidget extends StatelessWidget with StringFormatter {
 
     if (user.company != null && user.company!.isNotEmpty) {
       list.add(IconNameTile(
-        icon: Icons.abc,
+        icon: MyIcons.office,
         name: user.company!,
       ));
     }
 
     if (user.location != null && user.location!.isNotEmpty) {
       list.add(IconNameTile(
-        icon: Icons.abc,
+        icon: MyIcons.pin,
         name: user.location!,
       ));
     }
 
     if (user.email != null && user.email!.isNotEmpty) {
       list.add(IconNameTile(
-        icon: Icons.abc,
+        icon: MyIcons.email,
         name: user.email!,
       ));
     }
 
     if (user.blog != null && user.blog!.isNotEmpty) {
       list.add(IconNameTile(
-        icon: Icons.abc,
+        icon: MyIcons.link,
         name: user.blog!,
       ));
     }
 
     if (user.twitterUsername != null && user.twitterUsername!.isNotEmpty) {
       list.add(IconNameTile(
-        icon: Icons.abc,
+        icon: MyIcons.twitter,
         name: user.twitterUsername!,
       ));
     }

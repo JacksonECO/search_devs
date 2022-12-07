@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:search_devs/core/custom/color_app.dart';
 import 'package:search_devs/core/custom/style_app.dart';
+import 'package:search_devs/core/helps/my_icons.dart';
 
 class IconNameTile extends StatelessWidget {
-  final IconData icon;
+  final MyIcons icon;
   final String name;
   const IconNameTile({
     required this.icon,
@@ -15,8 +17,8 @@ class IconNameTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Icon(
-          icon,
+        SvgPicture.asset(
+          icon.path,
           color: context.colors.independence,
         ),
         const SizedBox(width: 10),
