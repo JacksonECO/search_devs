@@ -17,6 +17,7 @@ class ThemeApp {
     useMaterial3: true,
     primaryColor: Colors.blue,
     backgroundColor: Colors.white,
+    scaffoldBackgroundColor: Colors.white,
     secondaryHeaderColor: const Color(0xFF4A5568),
     inputDecorationTheme: InputDecorationTheme(
       floatingLabelStyle: StylesApp.i.inputFloating,

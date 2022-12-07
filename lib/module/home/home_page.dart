@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
                 prefixIcon: Icon(Icons.search),
               ),
               onFieldSubmitted: (value) {
-                print(value);
+                Navigator.of(context).pushNamed('/profile/', arguments: value.replaceAll('@', ''));
               },
             ),
           ),

@@ -1,13 +1,11 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart';
 import 'package:http/testing.dart';
-import 'package:mockito/annotations.dart';
 import 'package:search_devs/module/profile/exception/github_exception.dart';
 import 'package:search_devs/module/profile/models/repository_github_model.dart';
 import 'package:search_devs/module/profile/models/user_github_model.dart';
 import 'package:search_devs/module/profile/services/github_service_impl.dart';
 
-@GenerateMocks([Client])
 void main() {
   var userGitHubModel = UserGitHubModel(
     login: 'login',

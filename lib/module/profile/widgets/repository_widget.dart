@@ -15,7 +15,6 @@ class RepositoryWidget extends StatelessWidget with StringFormatter {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(height: 24),
           Text(repository.name, style: context.styles.title),
           const SizedBox(height: 16),
           Text(repository.description ?? 'Sem descrição', style: context.styles.body),
